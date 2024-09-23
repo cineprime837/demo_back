@@ -13,7 +13,6 @@ app.use(cors());
 
 
 
-const Port = process.env.port || 8080;
 
 const router = express.Router();
 
@@ -23,6 +22,11 @@ app.use("", topFiveController);
 app.use("", latest);
 app.use("", topPics);
 
+app.get("/", (req, res) => {
+    res.send("API is running");
+});
+
+const Port = process.env.PORT || 8080;
 
 module.exports={
     app:app,
