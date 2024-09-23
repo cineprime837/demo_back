@@ -9,6 +9,9 @@ const latest = require("./controller/latest.controller");
 
 const topPics = require("./controller/topPics.controller");
 
+
+const trendingNow = require("./controller/trendingNow.controller");
+
 app.use(express.json());
 app.use(cors());
 
@@ -22,6 +25,7 @@ app.use(router);
 app.use("", topFiveController);
 app.use("", latest);
 app.use("", topPics);
+app.use("", trendingNow);
 
 app.get("/", (req, res) => {
     res.send("API is running");
